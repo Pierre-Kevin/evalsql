@@ -1,0 +1,206 @@
+----------------------------------------------------------------------------------------------------------------------------------------  EXERCICE LOT 1
+
+
+1/
+
+SELECT hot_nom , hot_ville FROM hotel
+
+2/
+
+SELECT cli_ville , cli_prenom , cli_nom FROM client WHERE cli_nom = 'White'
+
+3/
+
+SELECT sta_nom , sta_altitude FROM station WHERE sta_altitude < 1000
+
+4/
+
+SELECT cha_numero , cha_capacite FROM chambre WHERE cha_capacite > 1 
+
+5/
+
+SELECT cli_ville , cli_nom FROM client WHERE cli_ville != 'Londre' 
+
+
+6/
+
+SELECT hot_nom , hot_ville , hot_categorie FROM hotel WHERE hot_ville = 'Bretou' AND hot_categorie >3 
+
+___________________________________________________________________________________________________
+
+
+----------------------------------------------------------------------------------------------------------------------------------------  EXERCICE LOT 2
+
+
+7/
+
+SELECT hot_sta_id , hot_nom , hot_categorie , hot_ville FROM hotel
+
+8/
+
+SELECT cha_id , cha_hot_id FROM chambre 
+
+9/
+
+SELECT hot_nom , hot_categorie , hot_ville , cha_numero , cha_capacite FROM hotel JOIN chambre WHERE cha_capacite > 1 AND hot_ville = 'Bretou' 
+
+10/
+
+SELECT cli_nom , hot_nom , res_date FROM client JOIN hotel JOIN reservation ON cli_id AND res_cli_id $
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------____________________________________________________________________________________________________________
+
+
+
+SELECT concat(emp_lastname,' ',emp_firstname) , emp_children 
+FROM employees 
+ORDER BY emp_children DESC , emp_lastname ASC
+
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+SELECT cus_lastname , cus_firstname , cus_countries_id
+FROM customers
+WHERE cus_countries_id != 'FR'
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT cus_city , cus_countries_id , cou_name
+FROM customers JOIN countries ON cou_id = cus_countries_id
+ORDER BY cus_city ASC 
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SELECT cus_lastname , cus_update_date
+FROM customers
+WHERE cus_update_date IS NOT NULL
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SELECT cus_id , cus_lastname , cus_firstname , cus_city
+FROM customers
+WHERE cus_city LIKE '%divos%'
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q6
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Q7
+
+
+SELECT pro_id , pro_ref , pro_name FROM products WHERE pro_id > 33 
+
+Q8
+
+
+SELECT pro_id , pro_ref , pro_name , cus_id , ord_id , ode_id FROM products JOIN orders_details ON orders_details.ode_pro_id = products.pro_id JOIN orders ON orders.ord_id = orders_details.ode_ord_id JOIN customers ON customers.cus_id = orders.ord_cus_id WHERE cus_lastname = 'Pikatchien' 
+
+Q9
+
+SELECT cat_id , cat_name , pro_name FROM categories JOIN products ON products.pro_cat_id = categories.cat_id 
+
+Q10
+
+
+SELECT concat(employees.emp_lastname,' ',employees.emp_firstname)AS Employé 
+       concat(         .emp_lastname,' ',         .emp_firstname)AS Supérieur 
+FROM employees
+JOIN employees AS      
+ON employees.emp_superior_id = superior.emp_id
+
+
+Q11
+
+
+SELECT pro_id FROM products JOIN orders_details ON pro_id = ode_pro_id ORDER BY ode_discount DESC LIMIT 1 
+
+Q13
+
+SELECT COUNT (cus_countries_id) AS ' No Client Canada'
+FROM customers
+WHERE cus_countries_id = 'ca'
+
+Q14 
+
+SELECT ode_id , ode_unit_price , ode_discount , ode_quantity , ode_ord_id , ode_pro_id , ord_order_date FROM orders_details JOIN orders ON orders.ord_id = orders_details.ode_ord_id WHERE ord_order_date LIKE '2020%' 
+
+
+Q15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
